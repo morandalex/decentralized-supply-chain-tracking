@@ -1,0 +1,444 @@
+{
+  "10": {
+    "optimism": {
+      "name": "optimism",
+      "chainId": "10",
+      "contracts": {
+        "ElectronicHealthLink": {
+          "address": "0xe62e76fedD91b29c36863C42bE2B0F60FfC183e6",
+          "abi": [
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_patient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "_doctor",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "_documentType",
+                  "type": "uint256"
+                }
+              ],
+              "name": "checkAccess",
+              "outputs": [
+                {
+                  "internalType": "bool",
+                  "name": "",
+                  "type": "bool"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_patient",
+                  "type": "address"
+                }
+              ],
+              "name": "getDocumentsFromGrant",
+              "outputs": [
+                {
+                  "components": [
+                    {
+                      "internalType": "address",
+                      "name": "patient",
+                      "type": "address"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "documentType",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "createdAt",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "string",
+                      "name": "ipfsLink",
+                      "type": "string"
+                    }
+                  ],
+                  "internalType": "struct Document[]",
+                  "name": "",
+                  "type": "tuple[]"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_doctor",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "_start",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "_end",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256[]",
+                  "name": "_documentTypes",
+                  "type": "uint256[]"
+                }
+              ],
+              "name": "grantAccess",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_patient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "_documentType",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "string",
+                  "name": "_ipfsLink",
+                  "type": "string"
+                }
+              ],
+              "name": "pushDocument",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_grantAddress",
+                  "type": "address"
+                }
+              ],
+              "name": "revokeAccess",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "4": {
+    "rinkeby": {
+      "name": "rinkeby",
+      "chainId": "4",
+      "contracts": {
+        "ElectronicHealthLink": {
+          "address": "0xf76E7fEE4eC013f0429fb03eD9591bBf70bAaa74",
+          "abi": [
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_patient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "_doctor",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "_documentType",
+                  "type": "uint256"
+                }
+              ],
+              "name": "checkAccess",
+              "outputs": [
+                {
+                  "internalType": "bool",
+                  "name": "",
+                  "type": "bool"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_patient",
+                  "type": "address"
+                }
+              ],
+              "name": "getDocumentsFromGrant",
+              "outputs": [
+                {
+                  "components": [
+                    {
+                      "internalType": "address",
+                      "name": "patient",
+                      "type": "address"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "documentType",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "createdAt",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "string",
+                      "name": "ipfsLink",
+                      "type": "string"
+                    }
+                  ],
+                  "internalType": "struct Document[]",
+                  "name": "",
+                  "type": "tuple[]"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_doctor",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "_start",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "_end",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256[]",
+                  "name": "_documentTypes",
+                  "type": "uint256[]"
+                }
+              ],
+              "name": "grantAccess",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_patient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "_documentType",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "string",
+                  "name": "_ipfsLink",
+                  "type": "string"
+                }
+              ],
+              "name": "pushDocument",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_grantAddress",
+                  "type": "address"
+                }
+              ],
+              "name": "revokeAccess",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "31337": {
+    "hardhat": {
+      "name": "hardhat",
+      "chainId": "31337",
+      "contracts": {
+        "ElectronicHealthLink": {
+          "address": "0x9A676e781A523b5d0C0e43731313A708CB607508",
+          "abi": [
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_patient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "_doctor",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "_documentType",
+                  "type": "uint256"
+                }
+              ],
+              "name": "checkAccess",
+              "outputs": [
+                {
+                  "internalType": "bool",
+                  "name": "",
+                  "type": "bool"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_patient",
+                  "type": "address"
+                }
+              ],
+              "name": "getDocumentsFromGrant",
+              "outputs": [
+                {
+                  "components": [
+                    {
+                      "internalType": "address",
+                      "name": "patient",
+                      "type": "address"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "documentType",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "createdAt",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "string",
+                      "name": "ipfsLink",
+                      "type": "string"
+                    }
+                  ],
+                  "internalType": "struct Document[]",
+                  "name": "",
+                  "type": "tuple[]"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_doctor",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "_start",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "_end",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256[]",
+                  "name": "_documentTypes",
+                  "type": "uint256[]"
+                }
+              ],
+              "name": "grantAccess",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_patient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "_documentType",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "string",
+                  "name": "_ipfsLink",
+                  "type": "string"
+                }
+              ],
+              "name": "pushDocument",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_grantAddress",
+                  "type": "address"
+                }
+              ],
+              "name": "revokeAccess",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            }
+          ]
+        }
+      }
+    }
+  }
+
+}
