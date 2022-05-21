@@ -37,6 +37,7 @@ function NetworkSwitch() {
           <HStack>
             <Avatar
               src={CHAIN_INFO[chainId].logoUrl}
+              //@ts-ignore
               alt={CHAIN_INFO[chainId].label}
               size="sm"
             />
