@@ -2,5 +2,7 @@
   "localhost_ElectronicHealthLinkAddress": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
   "rinkeby_ElectronicHealthLinkAddress": "0xe23780Cc6c75ea9fa3050b976503E1f7D843C4B3",
   "mumbai_ElectronicHealthLinkAddress": "0x134CeA11678Ef99b9FE44Bdd0ECD8c215624Ccdb",
-  "localhost_SupplyChainTrackingAddress": "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+  "localhost_SupplyChainTrackingAddress": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  "matic_SupplyChainTrackingAddress": "0xb02f78cd5653B55B8a98e7dE515Dd44cC2aed5b8",
+  "mumbai_SupplyChainTrackingAddress": "0x92035ca2680660B039c0F34276eF93EddD62D5cF"
 }

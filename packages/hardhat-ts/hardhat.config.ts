@@ -112,20 +112,24 @@ const config: HardhatUserConfig = {
     },
     matic: {
       url: 'https://rpc-mainnet.maticvigil.com/',
-      gasPrice: 1000000000,
+      gasPrice: 120000000000,
       accounts: {
         mnemonic: getMnemonic(),
       },
     },
     mumbai: {
       url: `https://polygon-mumbai.infura.io/v3/${INFURA_KEY}`,
-      gasPrice: 50000000000,
-      accounts: ['510d35a5eba3f69fe88cef25814d87ab385152b000b6169f5e053e8d40491f99']
+      gasPrice: 12000000000,
+      accounts:{
+        mnemonic: getMnemonic(),
+      },
     },
     optimism: {
       url: `https://optimism-mainnet.infura.io/v3/${INFURA_KEY}`,
       gasPrice: 1200000000000,
-      accounts:   ['9cf6d080668e342fe42bc7cabd0111491acf8d00072b09f3f30dd8c347b5c896']
+      accounts:  {
+        mnemonic: getMnemonic(),
+      },
     }
   },
   solidity: {
