@@ -1,31 +1,188 @@
 {
-  "4": {
-    "rinkeby": {
-      "name": "rinkeby",
-      "chainId": "4",
+  "31337": {
+    "hardhat": {
+      "name": "hardhat",
+      "chainId": "31337",
       "contracts": {
-        "ElectronicHealthLink": {
-          "address": "0xEc6204c9826c46E8e0c083f868B62040c0A53c23",
+        "SupplyChainTracking": {
+          "address": "0x9d4454B023096f34B160D6B654540c56A1F81688",
           "abi": [
+            {
+              "inputs": [],
+              "stateMutability": "nonpayable",
+              "type": "constructor"
+            },
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": true,
+                  "internalType": "address",
+                  "name": "owner",
+                  "type": "address"
+                },
+                {
+                  "indexed": true,
+                  "internalType": "address",
+                  "name": "approved",
+                  "type": "address"
+                },
+                {
+                  "indexed": true,
+                  "internalType": "uint256",
+                  "name": "tokenId",
+                  "type": "uint256"
+                }
+              ],
+              "name": "Approval",
+              "type": "event"
+            },
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": true,
+                  "internalType": "address",
+                  "name": "owner",
+                  "type": "address"
+                },
+                {
+                  "indexed": true,
+                  "internalType": "address",
+                  "name": "operator",
+                  "type": "address"
+                },
+                {
+                  "indexed": false,
+                  "internalType": "bool",
+                  "name": "approved",
+                  "type": "bool"
+                }
+              ],
+              "name": "ApprovalForAll",
+              "type": "event"
+            },
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": true,
+                  "internalType": "address",
+                  "name": "from",
+                  "type": "address"
+                },
+                {
+                  "indexed": true,
+                  "internalType": "address",
+                  "name": "to",
+                  "type": "address"
+                },
+                {
+                  "indexed": true,
+                  "internalType": "uint256",
+                  "name": "tokenId",
+                  "type": "uint256"
+                }
+              ],
+              "name": "Transfer",
+              "type": "event"
+            },
             {
               "inputs": [
                 {
                   "internalType": "address",
-                  "name": "_patient",
+                  "name": "_supplier",
                   "type": "address"
-                },
+                }
+              ],
+              "name": "addSupplierInMintAccessList",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
                 {
                   "internalType": "address",
-                  "name": "_doctor",
+                  "name": "_supplier",
+                  "type": "address"
+                }
+              ],
+              "name": "addSupplierInWhiteList",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "to",
                   "type": "address"
                 },
                 {
                   "internalType": "uint256",
-                  "name": "_documentType",
+                  "name": "tokenId",
                   "type": "uint256"
                 }
               ],
-              "name": "checkAccess",
+              "name": "approve",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "owner",
+                  "type": "address"
+                }
+              ],
+              "name": "balanceOf",
+              "outputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "",
+                  "type": "uint256"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint8",
+                  "name": "",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "",
+                  "type": "uint256"
+                }
+              ],
+              "name": "batchInQueue",
+              "outputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "",
+                  "type": "uint256"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "",
+                  "type": "address"
+                }
+              ],
+              "name": "canDecryptSupplierInfo",
               "outputs": [
                 {
                   "internalType": "bool",
@@ -40,48 +197,16 @@
               "inputs": [
                 {
                   "internalType": "address",
-                  "name": "_patient",
+                  "name": "",
                   "type": "address"
                 }
               ],
-              "name": "getDocumentsAll",
+              "name": "canMint",
               "outputs": [
                 {
-                  "components": [
-                    {
-                      "internalType": "address",
-                      "name": "patient",
-                      "type": "address"
-                    },
-                    {
-                      "internalType": "address",
-                      "name": "doctor",
-                      "type": "address"
-                    },
-                    {
-                      "internalType": "uint256",
-                      "name": "documentType",
-                      "type": "uint256"
-                    },
-                    {
-                      "internalType": "uint256",
-                      "name": "createdAt",
-                      "type": "uint256"
-                    },
-                    {
-                      "internalType": "string",
-                      "name": "ipfsLink",
-                      "type": "string"
-                    },
-                    {
-                      "internalType": "string",
-                      "name": "encryptedSymmetricKey",
-                      "type": "string"
-                    }
-                  ],
-                  "internalType": "struct Document[]",
+                  "internalType": "bool",
                   "name": "",
-                  "type": "tuple[]"
+                  "type": "bool"
                 }
               ],
               "stateMutability": "view",
@@ -90,59 +215,17 @@
             {
               "inputs": [
                 {
-                  "internalType": "address",
-                  "name": "_patient",
-                  "type": "address"
-                },
-                {
-                  "internalType": "address",
-                  "name": "_doctor",
-                  "type": "address"
-                },
-                {
                   "internalType": "uint256",
-                  "name": "_docType",
+                  "name": "tokenId",
                   "type": "uint256"
                 }
               ],
-              "name": "getDocumentsFromGrant",
+              "name": "getApproved",
               "outputs": [
                 {
-                  "components": [
-                    {
-                      "internalType": "address",
-                      "name": "patient",
-                      "type": "address"
-                    },
-                    {
-                      "internalType": "address",
-                      "name": "doctor",
-                      "type": "address"
-                    },
-                    {
-                      "internalType": "uint256",
-                      "name": "documentType",
-                      "type": "uint256"
-                    },
-                    {
-                      "internalType": "uint256",
-                      "name": "createdAt",
-                      "type": "uint256"
-                    },
-                    {
-                      "internalType": "string",
-                      "name": "ipfsLink",
-                      "type": "string"
-                    },
-                    {
-                      "internalType": "string",
-                      "name": "encryptedSymmetricKey",
-                      "type": "string"
-                    }
-                  ],
-                  "internalType": "struct Document[]",
+                  "internalType": "address",
                   "name": "",
-                  "type": "tuple[]"
+                  "type": "address"
                 }
               ],
               "stateMutability": "view",
@@ -151,27 +234,139 @@
             {
               "inputs": [
                 {
-                  "internalType": "address",
-                  "name": "_doctor",
-                  "type": "address"
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "_start",
-                  "type": "uint256"
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "_end",
-                  "type": "uint256"
-                },
+                  "internalType": "uint8",
+                  "name": "_queueId",
+                  "type": "uint8"
+                }
+              ],
+              "name": "getProductsInQueue",
+              "outputs": [
                 {
                   "internalType": "uint256[]",
-                  "name": "_documentTypes",
+                  "name": "",
                   "type": "uint256[]"
                 }
               ],
-              "name": "grantAccess",
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "_id",
+                  "type": "uint256"
+                }
+              ],
+              "name": "getProductsProcessedBatch",
+              "outputs": [
+                {
+                  "internalType": "string",
+                  "name": "",
+                  "type": "string"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "_id",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "_queueId",
+                  "type": "uint8"
+                }
+              ],
+              "name": "getProductsProcessedStep",
+              "outputs": [
+                {
+                  "components": [
+                    {
+                      "internalType": "address",
+                      "name": "supplier",
+                      "type": "address"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "timetracked",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "bool",
+                      "name": "transferred",
+                      "type": "bool"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "reprocessedCounter",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct SupplyChainTracking.Step",
+                  "name": "",
+                  "type": "tuple"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "_id",
+                  "type": "uint256"
+                }
+              ],
+              "name": "getProductsProcessedStepArrayLenght",
+              "outputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "",
+                  "type": "uint256"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "_id",
+                  "type": "uint256"
+                }
+              ],
+              "name": "getProductsProcessedWhatQueues",
+              "outputs": [
+                {
+                  "internalType": "uint8[]",
+                  "name": "",
+                  "type": "uint8[]"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_supplier",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "_queueId",
+                  "type": "uint8"
+                }
+              ],
+              "name": "givePullAccessToAddressIntoQueue",
               "outputs": [],
               "stateMutability": "nonpayable",
               "type": "function"
@@ -180,31 +375,16 @@
               "inputs": [
                 {
                   "internalType": "address",
-                  "name": "_patient",
+                  "name": "_supplier",
                   "type": "address"
                 },
                 {
-                  "internalType": "uint256",
-                  "name": "_documentType",
-                  "type": "uint256"
-                },
-                {
-                  "internalType": "string",
-                  "name": "_ipfsLink",
-                  "type": "string"
-                },
-                {
-                  "internalType": "string",
-                  "name": "_encryptedSymmetricKey",
-                  "type": "string"
-                },
-                {
-                  "internalType": "address",
-                  "name": "_doctor",
-                  "type": "address"
+                  "internalType": "uint8",
+                  "name": "_queueId",
+                  "type": "uint8"
                 }
               ],
-              "name": "pushDocument",
+              "name": "givePushAccessToAddressIntoQueue",
               "outputs": [],
               "stateMutability": "nonpayable",
               "type": "function"
@@ -213,47 +393,54 @@
               "inputs": [
                 {
                   "internalType": "address",
-                  "name": "_grantAddress",
+                  "name": "owner",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "operator",
                   "type": "address"
                 }
               ],
-              "name": "revokeAccess",
-              "outputs": [],
-              "stateMutability": "nonpayable",
+              "name": "isApprovedForAll",
+              "outputs": [
+                {
+                  "internalType": "bool",
+                  "name": "",
+                  "type": "bool"
+                }
+              ],
+              "stateMutability": "view",
               "type": "function"
-            }
-          ]
-        }
-      }
-    }
-  },
-  "80001": {
-    "mumbai": {
-      "name": "mumbai",
-      "chainId": "80001",
-      "contracts": {
-        "ElectronicHealthLink": {
-          "address": "0x134CeA11678Ef99b9FE44Bdd0ECD8c215624Ccdb",
-          "abi": [
+            },
             {
               "inputs": [
                 {
-                  "internalType": "address",
-                  "name": "_patient",
-                  "type": "address"
-                },
-                {
-                  "internalType": "address",
-                  "name": "_doctor",
-                  "type": "address"
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "_documentType",
-                  "type": "uint256"
+                  "internalType": "uint8",
+                  "name": "",
+                  "type": "uint8"
                 }
               ],
-              "name": "checkAccess",
+              "name": "isEnd",
+              "outputs": [
+                {
+                  "internalType": "bool",
+                  "name": "",
+                  "type": "bool"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint8",
+                  "name": "",
+                  "type": "uint8"
+                }
+              ],
+              "name": "isStart",
               "outputs": [
                 {
                   "internalType": "bool",
@@ -268,220 +455,11 @@
               "inputs": [
                 {
                   "internalType": "address",
-                  "name": "_patient",
+                  "name": "_supplier",
                   "type": "address"
                 }
               ],
-              "name": "getDocumentsAll",
-              "outputs": [
-                {
-                  "components": [
-                    {
-                      "internalType": "address",
-                      "name": "patient",
-                      "type": "address"
-                    },
-                    {
-                      "internalType": "address",
-                      "name": "doctor",
-                      "type": "address"
-                    },
-                    {
-                      "internalType": "uint256",
-                      "name": "documentType",
-                      "type": "uint256"
-                    },
-                    {
-                      "internalType": "uint256",
-                      "name": "createdAt",
-                      "type": "uint256"
-                    },
-                    {
-                      "internalType": "string",
-                      "name": "ipfsLink",
-                      "type": "string"
-                    },
-                    {
-                      "internalType": "string",
-                      "name": "encryptedSymmetricKey",
-                      "type": "string"
-                    }
-                  ],
-                  "internalType": "struct Document[]",
-                  "name": "",
-                  "type": "tuple[]"
-                }
-              ],
-              "stateMutability": "view",
-              "type": "function"
-            },
-            {
-              "inputs": [
-                {
-                  "internalType": "address",
-                  "name": "_patient",
-                  "type": "address"
-                },
-                {
-                  "internalType": "address",
-                  "name": "_doctor",
-                  "type": "address"
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "_docType",
-                  "type": "uint256"
-                }
-              ],
-              "name": "getDocumentsFromGrant",
-              "outputs": [
-                {
-                  "components": [
-                    {
-                      "internalType": "address",
-                      "name": "patient",
-                      "type": "address"
-                    },
-                    {
-                      "internalType": "address",
-                      "name": "doctor",
-                      "type": "address"
-                    },
-                    {
-                      "internalType": "uint256",
-                      "name": "documentType",
-                      "type": "uint256"
-                    },
-                    {
-                      "internalType": "uint256",
-                      "name": "createdAt",
-                      "type": "uint256"
-                    },
-                    {
-                      "internalType": "string",
-                      "name": "ipfsLink",
-                      "type": "string"
-                    },
-                    {
-                      "internalType": "string",
-                      "name": "encryptedSymmetricKey",
-                      "type": "string"
-                    }
-                  ],
-                  "internalType": "struct Document[]",
-                  "name": "",
-                  "type": "tuple[]"
-                }
-              ],
-              "stateMutability": "view",
-              "type": "function"
-            },
-            {
-              "inputs": [
-                {
-                  "internalType": "address",
-                  "name": "_doctor",
-                  "type": "address"
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "_start",
-                  "type": "uint256"
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "_end",
-                  "type": "uint256"
-                },
-                {
-                  "internalType": "uint256[]",
-                  "name": "_documentTypes",
-                  "type": "uint256[]"
-                }
-              ],
-              "name": "grantAccess",
-              "outputs": [],
-              "stateMutability": "nonpayable",
-              "type": "function"
-            },
-            {
-              "inputs": [
-                {
-                  "internalType": "address",
-                  "name": "_patient",
-                  "type": "address"
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "_documentType",
-                  "type": "uint256"
-                },
-                {
-                  "internalType": "string",
-                  "name": "_ipfsLink",
-                  "type": "string"
-                },
-                {
-                  "internalType": "string",
-                  "name": "_encryptedSymmetricKey",
-                  "type": "string"
-                },
-                {
-                  "internalType": "address",
-                  "name": "_doctor",
-                  "type": "address"
-                }
-              ],
-              "name": "pushDocument",
-              "outputs": [],
-              "stateMutability": "nonpayable",
-              "type": "function"
-            },
-            {
-              "inputs": [
-                {
-                  "internalType": "address",
-                  "name": "_grantAddress",
-                  "type": "address"
-                }
-              ],
-              "name": "revokeAccess",
-              "outputs": [],
-              "stateMutability": "nonpayable",
-              "type": "function"
-            }
-          ]
-        }
-      }
-    }
-  },
-  "10": {
-    "optimism": {
-      "name": "optimism",
-      "chainId": "10",
-      "contracts": {
-        "ElectronicHealthLink": {
-          "address": "0x695A34c4d4f69719e27f7760A9BfefDb91fcD98D",
-          "abi": [
-            {
-              "inputs": [
-                {
-                  "internalType": "address",
-                  "name": "_patient",
-                  "type": "address"
-                },
-                {
-                  "internalType": "address",
-                  "name": "_doctor",
-                  "type": "address"
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "_documentType",
-                  "type": "uint256"
-                }
-              ],
-              "name": "checkAccess",
+              "name": "isSupplierInWhiteList",
               "outputs": [
                 {
                   "internalType": "bool",
@@ -495,49 +473,158 @@
             {
               "inputs": [
                 {
+                  "internalType": "string",
+                  "name": "tokenURI",
+                  "type": "string"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "_productId",
+                  "type": "uint256"
+                }
+              ],
+              "name": "mint",
+              "outputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "",
+                  "type": "uint256"
+                }
+              ],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
                   "internalType": "address",
-                  "name": "_patient",
+                  "name": "",
                   "type": "address"
                 }
               ],
-              "name": "getDocumentsAll",
+              "name": "mintingCredit",
               "outputs": [
                 {
-                  "components": [
-                    {
-                      "internalType": "address",
-                      "name": "patient",
-                      "type": "address"
-                    },
-                    {
-                      "internalType": "address",
-                      "name": "doctor",
-                      "type": "address"
-                    },
-                    {
-                      "internalType": "uint256",
-                      "name": "documentType",
-                      "type": "uint256"
-                    },
-                    {
-                      "internalType": "uint256",
-                      "name": "createdAt",
-                      "type": "uint256"
-                    },
-                    {
-                      "internalType": "string",
-                      "name": "ipfsLink",
-                      "type": "string"
-                    },
-                    {
-                      "internalType": "string",
-                      "name": "encryptedSymmetricKey",
-                      "type": "string"
-                    }
-                  ],
-                  "internalType": "struct Document[]",
+                  "internalType": "uint256",
                   "name": "",
-                  "type": "tuple[]"
+                  "type": "uint256"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "name",
+              "outputs": [
+                {
+                  "internalType": "string",
+                  "name": "",
+                  "type": "string"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "tokenId",
+                  "type": "uint256"
+                }
+              ],
+              "name": "ownerOf",
+              "outputs": [
+                {
+                  "internalType": "address",
+                  "name": "",
+                  "type": "address"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "",
+                  "type": "uint256"
+                }
+              ],
+              "name": "productIdFromTokenId",
+              "outputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "",
+                  "type": "uint256"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "",
+                  "type": "uint256"
+                }
+              ],
+              "name": "productsProcessed",
+              "outputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "id",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "string",
+                  "name": "batch",
+                  "type": "string"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "howmanysteps",
+                  "type": "uint256"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint8",
+                  "name": "_queueId",
+                  "type": "uint8"
+                }
+              ],
+              "name": "pushBatchInQueue",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "",
+                  "type": "uint256"
+                }
+              ],
+              "name": "queuePullAccess",
+              "outputs": [
+                {
+                  "internalType": "uint8",
+                  "name": "",
+                  "type": "uint8"
                 }
               ],
               "stateMutability": "view",
@@ -547,58 +634,21 @@
               "inputs": [
                 {
                   "internalType": "address",
-                  "name": "_patient",
-                  "type": "address"
-                },
-                {
-                  "internalType": "address",
-                  "name": "_doctor",
+                  "name": "",
                   "type": "address"
                 },
                 {
                   "internalType": "uint256",
-                  "name": "_docType",
+                  "name": "",
                   "type": "uint256"
                 }
               ],
-              "name": "getDocumentsFromGrant",
+              "name": "queuePushAccess",
               "outputs": [
                 {
-                  "components": [
-                    {
-                      "internalType": "address",
-                      "name": "patient",
-                      "type": "address"
-                    },
-                    {
-                      "internalType": "address",
-                      "name": "doctor",
-                      "type": "address"
-                    },
-                    {
-                      "internalType": "uint256",
-                      "name": "documentType",
-                      "type": "uint256"
-                    },
-                    {
-                      "internalType": "uint256",
-                      "name": "createdAt",
-                      "type": "uint256"
-                    },
-                    {
-                      "internalType": "string",
-                      "name": "ipfsLink",
-                      "type": "string"
-                    },
-                    {
-                      "internalType": "string",
-                      "name": "encryptedSymmetricKey",
-                      "type": "string"
-                    }
-                  ],
-                  "internalType": "struct Document[]",
+                  "internalType": "uint8",
                   "name": "",
-                  "type": "tuple[]"
+                  "type": "uint8"
                 }
               ],
               "stateMutability": "view",
@@ -607,27 +657,25 @@
             {
               "inputs": [
                 {
-                  "internalType": "address",
-                  "name": "_doctor",
-                  "type": "address"
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "_start",
-                  "type": "uint256"
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "_end",
-                  "type": "uint256"
-                },
-                {
-                  "internalType": "uint256[]",
-                  "name": "_documentTypes",
-                  "type": "uint256[]"
+                  "internalType": "uint8",
+                  "name": "_queueId",
+                  "type": "uint8"
                 }
               ],
-              "name": "grantAccess",
+              "name": "removeEnd",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint8",
+                  "name": "_queueId",
+                  "type": "uint8"
+                }
+              ],
+              "name": "removeStart",
               "outputs": [],
               "stateMutability": "nonpayable",
               "type": "function"
@@ -636,31 +684,11 @@
               "inputs": [
                 {
                   "internalType": "address",
-                  "name": "_patient",
-                  "type": "address"
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "_documentType",
-                  "type": "uint256"
-                },
-                {
-                  "internalType": "string",
-                  "name": "_ipfsLink",
-                  "type": "string"
-                },
-                {
-                  "internalType": "string",
-                  "name": "_encryptedSymmetricKey",
-                  "type": "string"
-                },
-                {
-                  "internalType": "address",
-                  "name": "_doctor",
+                  "name": "_supplier",
                   "type": "address"
                 }
               ],
-              "name": "pushDocument",
+              "name": "removeSupplierInMintAccessList",
               "outputs": [],
               "stateMutability": "nonpayable",
               "type": "function"
@@ -669,11 +697,251 @@
               "inputs": [
                 {
                   "internalType": "address",
-                  "name": "_grantAddress",
+                  "name": "_supplier",
                   "type": "address"
                 }
               ],
-              "name": "revokeAccess",
+              "name": "removeSupplierInWhiteList",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "from",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "to",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "tokenId",
+                  "type": "uint256"
+                }
+              ],
+              "name": "safeTransferFrom",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "from",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "to",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "tokenId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "_data",
+                  "type": "bytes"
+                }
+              ],
+              "name": "safeTransferFrom",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "operator",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "approved",
+                  "type": "bool"
+                }
+              ],
+              "name": "setApprovalForAll",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint8",
+                  "name": "_queueId",
+                  "type": "uint8"
+                }
+              ],
+              "name": "setEnd",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint8",
+                  "name": "_queueId",
+                  "type": "uint8"
+                }
+              ],
+              "name": "setStart",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "",
+                  "type": "address"
+                }
+              ],
+              "name": "supplierInfo",
+              "outputs": [
+                {
+                  "internalType": "string",
+                  "name": "ragsoc",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "piva",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "location",
+                  "type": "string"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "bytes4",
+                  "name": "interfaceId",
+                  "type": "bytes4"
+                }
+              ],
+              "name": "supportsInterface",
+              "outputs": [
+                {
+                  "internalType": "bool",
+                  "name": "",
+                  "type": "bool"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "symbol",
+              "outputs": [
+                {
+                  "internalType": "string",
+                  "name": "",
+                  "type": "string"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "",
+                  "type": "uint256"
+                }
+              ],
+              "name": "tokenIdFromProductId",
+              "outputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "",
+                  "type": "uint256"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "tokenId",
+                  "type": "uint256"
+                }
+              ],
+              "name": "tokenURI",
+              "outputs": [
+                {
+                  "internalType": "string",
+                  "name": "",
+                  "type": "string"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint8",
+                  "name": "_queueIdA",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "_queueIdB",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "_id",
+                  "type": "uint256"
+                }
+              ],
+              "name": "transferBatchFromTo",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "from",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "to",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "tokenId",
+                  "type": "uint256"
+                }
+              ],
+              "name": "transferFrom",
               "outputs": [],
               "stateMutability": "nonpayable",
               "type": "function"

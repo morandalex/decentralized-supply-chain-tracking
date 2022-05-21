@@ -8,11 +8,11 @@ import {
   Th,
   TableContainer
 } from "@chakra-ui/react";
-//import ABIS from "../hardhat_contracts.json";
+import ABIS from "../hardhat_contracts.json";
 //@ts-ignore
-//import { SupplyChainTracking } from "../generated/contract-types/SupplyChainTracking";
-import { SupplyChainTracking } from "@scaffold-eth/hardhat-ts/generated/contract-types/SupplyChainTracking";
-import ABIS from "@scaffold-eth/hardhat-ts/hardhat_contracts.json";
+import { SupplyChainTracking } from "../generated/contract-types/SupplyChainTracking";
+//import { SupplyChainTracking } from "@scaffold-eth/hardhat-ts/generated/contract-types/SupplyChainTracking";
+//import ABIS from "@scaffold-eth/hardhat-ts/hardhat_contracts.json";
 import React, { ChangeEvent, useCallback, useContext, useEffect, useState } from "react";
 import { Web3Context } from "../../contexts/Web3Provider";
 import NETWORKS from "../../core/networks";
@@ -44,7 +44,7 @@ function ContractFields({ ...others }: any) {
         const transaction = await yourWriteContract.addSupplierInWhiteList(_address);
         await transaction.wait();
         console.log(transaction)
-      } catch (e) { alert(e.message) }
+      } catch (e:any) { alert(e.message) }
     }
   }
   async function addSupplierInMintAccessListFun(_address: string) {
@@ -54,7 +54,7 @@ function ContractFields({ ...others }: any) {
         const transaction = await yourWriteContract.addSupplierInMintAccessList(_address);
         await transaction.wait();
         console.log(transaction)
-      } catch (e) { alert(e.message) }
+      } catch (e:any) { alert(e.message) }
     }
   }
   async function givePushAccessToAddressIntoQueueFun(_address: string, _queue: string) {
@@ -65,7 +65,7 @@ function ContractFields({ ...others }: any) {
         const transaction = await yourWriteContract.givePushAccessToAddressIntoQueue(_address, _queue);
         await transaction.wait();
         console.log(transaction)
-      } catch (e) { alert(e.message) }
+      } catch (e:any) { alert(e.message) }
     }
   }
   async function givePullAccessToAddressIntoQueueFun(_address: string, _queue: string) {
@@ -76,7 +76,7 @@ function ContractFields({ ...others }: any) {
         const transaction = await yourWriteContract.givePullAccessToAddressIntoQueue(_address, _queue);
         await transaction.wait();
         console.log(transaction)
-      } catch (e) { alert(e.message) }
+      } catch (e:any) { alert(e.message) }
     }
   }
   async function setStartFun(_queue: string) {

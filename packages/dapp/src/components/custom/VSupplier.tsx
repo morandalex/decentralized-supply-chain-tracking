@@ -8,11 +8,11 @@ import {
   Th,
   TableContainer
 } from "@chakra-ui/react";
-//import ABIS from "../hardhat_contracts.json";
+import ABIS from "../hardhat_contracts.json";
 //@ts-ignore
-//import { SupplyChainTracking } from "../generated/contract-types/SupplyChainTracking";
-import { SupplyChainTracking } from "@scaffold-eth/hardhat-ts/generated/contract-types/SupplyChainTracking";
-import ABIS from "@scaffold-eth/hardhat-ts/hardhat_contracts.json";
+import { SupplyChainTracking } from "../generated/contract-types/SupplyChainTracking";
+//import { SupplyChainTracking } from "@scaffold-eth/hardhat-ts/generated/contract-types/SupplyChainTracking";
+//import ABIS from "@scaffold-eth/hardhat-ts/hardhat_contracts.json";
 import React, { ChangeEvent, useCallback, useContext, useEffect, useState } from "react";
 import { Web3Context } from "../../contexts/Web3Provider";
 import NETWORKS from "../../core/networks";
