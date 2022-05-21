@@ -76,7 +76,9 @@ const config: HardhatUserConfig = {
     },
     rinkeby: {
       url: `https://rinkeby.infura.io/v3/${INFURA_KEY}`, // <---- YOUR INFURA ID! (or it won't work)
-      accounts: ['510d35a5eba3f69fe88cef25814d87ab385152b000b6169f5e053e8d40491f99'],
+      accounts: {
+        mnemonic: getMnemonic(),
+      },
       
     },
     kovan: {
