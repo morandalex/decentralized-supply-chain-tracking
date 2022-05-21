@@ -47,6 +47,9 @@ const MyApp = ({
   return (
     <ApolloProvider client={apolloClient}>
       <Web3ReactProvider getLibrary={getLibrary}>
+        {
+          //@ts-ignore
+        
         <Web3ReactProviderDefault getLibrary={getLibrary}>
           <Web3Provider>
             <Web3ReactManager>
@@ -60,13 +63,19 @@ const MyApp = ({
                   </Head>
                   <DefaultSeo {...defaultSEOConfig} />
                   <Layout>
-                    <Component {...pageProps} />
+                    {
+                       //@ts-ignore
+                       <Component {...pageProps} />
+                    }
+                   
                   </Layout>
                 </ChakraProvider>
               </CacheProvider>
             </Web3ReactManager>
           </Web3Provider>
+     
         </Web3ReactProviderDefault>
+        }
       </Web3ReactProvider>
     </ApolloProvider >
   );
